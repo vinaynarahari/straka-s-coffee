@@ -15,12 +15,12 @@
 </head>
   
 
-  <body style="background: black">
-    <section id="navbar">
+  <body style="background: #EEEBE2; overflow-x: hidden;">
+    <section id="navbar" style="border-bottom: 1px red;">
      
       <nav class="navbar navbar-expand-lg  bg-company navbar-custom " style="padding-top: 2%; padding-left: 100px; padding-right: 100px;">
        
-          <a class="navbar-brand" href="https://www.youtube.com/">Navbar</a>
+          <a class="navbar-brand" href="https://www.youtube.com/"> <img src="appreciated!.png" style="height: 10vh; width: auto;"></a>
    
         <button
           class="navbar-toggler"
@@ -52,15 +52,74 @@
                     <a class="nav-link" id="ye" href="#">Contact</a>
                     
                 </li>
+                <li class="nav-item">
+                
+                  <button class="btn btn-outline-success my-2 my-sm-0" id="" type="submit" style="border-color: #5e2807 !important; color: #5e2807;">Login</button>
+                  
+              </li>
               </div>
             </li>
           </ul>
         </div>
-        <span class="nav-title">Strakáfe</span>
+        
 
       </nav>
+
+
+      <div class="nav box" style="width: 100%; height: 800px; padding: 10vh; background-color: #bb9e85; height: 90%; margin-left:40px; width: 94.4%;">
+        <div style="width: 100%;">
+          <img src="image-3.png" style="position: relative; height: 90vh; width: auto; left: 90vh; bottom: 10vh; ">
+
+        </div>
+          <span class="nav-title">Strakáfe</span>
+          <span class="slogan"  id="changing-text" style="top: 60vh; font-size: 3.2rem; width: 100vh; color: #fff2e2 !important; text-shadow: 2px 2px 8px #bb9e85; padding-right: 25vh; width: 2000px;">I'd Like to Order a </span>
+
+          <button class="order-button" href="#" style="position: relative; bottom: 25vh; left: 15vh; "> Order Now</button>
+          
+
+      </div>
+
+
+
+      
   </section>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ff0000" fill-opacity="1" d="M0,0L48,21.3C96,43,192,85,288,90.7C384,96,480,64,576,64C672,64,768,96,864,122.7C960,149,1056,171,1152,197.3C1248,224,1344,256,1392,272L1440,288L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+
+  <section class="Menu">
+
+    <h1 style="color: #0E1E38; font-size: 3rem !important; text-transform: uppercase; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; position: relative; top: 15vh; font-weight: 600; left: 10vh;"> Start Your Day Off With a Slam Dunk!</h1>
+<div style="position: relative; top: 30vh; text-align: center;">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="box" style="background-color: #0E1E38; border-radius: 10000px; width: 20vh; height: 20vh; left: 20vh; position: relative;">
+          
+          <img src="coffeecup.png" alt=""  style="height: 20vh; width: auto; position: relative; bottom: 5%; right: 2%;">
+          <h1>Coffee</h1>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="box">
+          <div class="box" style="background-color: #0E1E38; border-radius: 10000px; width: 20vh; height: 20vh; left: 20vh; position: relative;">
+          
+            <img src="coffeecup.png" alt=""  style="height: 20vh; width: auto; position: relative; bottom: 5%; right: 2%;">
+            <h1>Tea</h1>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="box">
+          <div class="box" style="background-color: #0E1E38; border-radius: 10000px; width: 20vh; height: 20vh; left: 20vh; position: relative;">
+          
+            <img src="coffeecup.png" alt=""  style="height: 20vh; width: auto; position: relative; bottom: 5%; right: 2%;">
+            <h1>Hot Chocolate</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+  </section>
    
 
   
@@ -69,24 +128,45 @@
     
 
     <section id="shop">
-      <h1 style="font-size: 9vh !important; padding-top: 20px !important; padding-bottom: 40px;">Shop</h1>
-      <div class="shopIMG">
-        <div id="left" class="row">
-          <div id="col" class="col-lg-3 col-lg-3">
-            <div class="img1"></div>
-          </div>
-          <div id="col" class="col-lg-3 col-lg-3">
-            <div class="img1"></div>
-          </div>
-          <div id="col" class="col-lg-3 col-lg-3">
-            <div class="img1"></div>
-          </div>
-          <div id="col" class="col-lg-3 col-lg-3">
-            <div class="img1"></div>
-          </div>
-        </div>
-      </div>
+      
     </section>
     <script src="main.js"></script>
+    <script>
+      
+      const texts = ["Coffee", "Hot Chocolate", "Tea"];
+      const originalText = "I'd Like to Order a ";
+      const speed = 85;
+      let textIndex = 0;
+      let charIndex = 0;
+
+      function typeWriter() {
+        if (textIndex < texts.length) {
+          const currentText = texts[textIndex];
+          if (charIndex < currentText.length) {
+            document.getElementById("changing-text").textContent = originalText + currentText.substring(0, charIndex + 1);
+            charIndex++;
+            setTimeout(typeWriter, speed);
+          } else {
+            textIndex++;
+            charIndex = 0;
+            setTimeout(clearText, speed * 5);
+          }
+        } else {
+          textIndex = 0;
+          setTimeout(typeWriter, speed * 5);
+        }
+      }
+
+      function clearText() {
+        document.getElementById("changing-text").textContent = originalText;
+        setTimeout(typeWriter, speed * 2);
+      }
+
+      typeWriter();
+
+
+
+
+      </script>
   </body>
 </html>
